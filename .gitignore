@@ -1,3 +1,6 @@
 task/task1ENV/
 task/__pycache__/
+task2/__pycache__/
+task2/task2VENV/
+task2/.pytest_cache/
 
