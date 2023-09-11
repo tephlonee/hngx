@@ -7,8 +7,9 @@ It uses a relational database, specifically SQLite.
 It returns data and accepts in the `application/json` content-type. 
 
 ## API Url
--
 
+    https://hngxtask1api.onrender.com/api
+    
 ## API Endpoints
 
 ### GET/READ requests
