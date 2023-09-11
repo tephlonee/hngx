@@ -1,5 +1,10 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
+import sys
+import os
+
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__)))
+sys.path.append(root_path)
 
 from models import Person
 import schemas
