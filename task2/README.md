@@ -76,7 +76,8 @@ will be returned.
 
 ### DELETE - A specific person resource
 
-`DELETE` - /api/{name} Delete an existing person instance. 
+`DELETE` - /api/{name} Delete an existing person instance.  A path parameter is required to as it specifies the name of the existing 
+resource. If there's no existing resource, it returns an error of 404 stating no resource is found. 
 
 
 
