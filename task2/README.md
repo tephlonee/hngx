@@ -20,79 +20,17 @@ pip install .task2/requirements.txt
     uvicorn task2.main:app --port 8000 --reload
 ```
 
-
 ## API Url
 
     https://hngxtask1api.onrender.com/api
-    
-## API Endpoints
+## How to use the CRUD API
 
-### GET/READ requests
-
-`GET` - /api/ 
-Gets all persons in the databasase. The endpoint receives a get request and returns all the persons in the database.
-For example
-
-```python
-[
-    {
-        "id" : 1,
-        "name": "Kinlani"
-    },
-    {
-        "id" : 2,
-        "name" : "Tijani"
-    }
-
-]
-
-```
-### GET a specific person resource by name
-
-`GET` - /api/{name} -  
-  Returns a specific person to the client. The endpoint receives a get request and returns the specific. 
-  A path parameter is used to specify the specific person's details to return. 
-`NOTE` : If a wrong path parameter value is sent, then a 404 response stating that the 'User can't be found will be returned'
-
-
-For example. This the result for calling the endpoint `/api/Tijani`
-```python
- {
-        "id" : 2,
-        "name" : "Tijani"
-  }
-
-```
-
-### POST/CREATE - create a specific person resource.
-
-`POST` - /api/
-A POST request that creates a person instance. The details/parameters to be sent as `application/json` should include `name` as      the json key and it's value. For example 
-
-```python
-  {
-    "name" : "Kinlani
-  }
-```
-`NOTE`: If an existing data is used in the data sent, then a 400 response would be returned stating that a 'User already has that     name'    
-
-### UPDATE - Update a specific person resource 
-
-`PUT` - /api/{name} - UPDATE an existing Person resource. 
-A PUT request that updates an existing Person resource. A path parameter is required to as it specifies the name of the existing 
-resource. 
-
-The update data is sent through the request body in the `application/json` format is used to update the existing resource. 
-In all, path parameter is used for identifying the existing resource. 
-
-`NOTE`: 
-If a wrong name is inserted or one that doesn't exist, a 404 response
-will be returned. 
-
-### DELETE - A specific person resource
-
-`DELETE` - /api/{name} Delete an existing person instance.  A path parameter is required to as it specifies the name of the existing 
-resource. If there's no existing resource, it returns an error of 404 stating no resource is found. 
+  - GET A PERSON'S DETAILS. Use the GET request to the `api/{name}` endpoint specified in the DOCUMENTATION.md file.
+  - CREATE A PERSON's DETAILS.  Send a POST request to the `api`. Send the data in a json format as the body of the post request      with "name" as an attribute and
+    value accompaning it .
+  - UPDATE A PERSON's details. Send a PUT request to the `api/{name}` with an old name specified in the path paramter. Send the new
+    name as the body of the request. The body should be in json format with the same attribute name as the POST request.
+  - DELETE A PERSON's details. Send a delete request to the `api\{name}` with an existing specified in the path parameter. 
 
 ## Example Usage
 
