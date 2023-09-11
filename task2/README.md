@@ -6,6 +6,21 @@ It uses a relational database, specifically SQLite.
 
 It returns data and accepts in the `application/json` content-type. 
 
+## Setup
+
+The API can be set up locally by cloning this repository and running the 
+```python
+pip install .task2/requirements.txt
+```
+ to install all the dependencies. 
+
+ In order to run the FastApi app locally. Run the following command
+
+ ```python
+    uvicorn task2.main:app --port 8000 --reload
+```
+
+
 ## API Url
 
     https://hngxtask1api.onrender.com/api
@@ -79,6 +94,40 @@ will be returned.
 `DELETE` - /api/{name} Delete an existing person instance.  A path parameter is required to as it specifies the name of the existing 
 resource. If there's no existing resource, it returns an error of 404 stating no resource is found. 
 
+## Example Usage
+
+```python
+
+    import requests
+
+    url = "https://hngxtask1api.onrender.com/api"
+    headers = {"content-type" : "application/json"}
+
+    req = requests.Session() # Create a Session
+
+    # Create a Person
+
+    params = {"name" : "Kinlani"}
+
+    post_req = req.post(url , json =  params , headers = headers}
+    res = post_req.json()
+
+    # Getting a Person
+
+    get_req = req.get(url+f"/{params.values()[0]/")
+    res = get_req.json()
+
+    # Updating a Person
+
+    put_req = req.put(url + f"/Kinlani/" , json = {"name" : "Tunde"})
+    res = put_req.json()
+
+
+    # Deleting a Person
+    del_req = req.delete(url + f"/Tunde/")
+    res = del_req.json()
+
+```
 
 
   
