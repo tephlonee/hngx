@@ -38,7 +38,7 @@ def delete_user(db: Session , db_user):
     db.delete(db_user)
     db.commit()
     db.close()
-    return f"{db_user.name} deleted"
+    return db_user
     
     
 
